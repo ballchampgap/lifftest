@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width />
 <title>Insert-Data</title>
 </head>
 <body>
-    <h1> Page A</h1>
-    <img id="pictureUrl">
-    <p id="displayName"><b>Name: </b></p>
-  <button id="btnLogIn" onclick="logIn()">Log In</button>
-  <button id="btnLogOut" onclick="logOut()">Log Out</button>
+    <h1> Page A </h1>
+    <img id="pictureUrl" width="25%">
+  <p id="userId"></p>
+  <p id="displayName"></p>
+  <p id="statusMessage"></p>
+  <p id="getDecodedIDToken"></p>
 
 <h2> พืชเศรษฐกิจ </h2>
 <form  action = "frminsert.php" method="POST">
@@ -40,34 +42,22 @@
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script>
     
-    function logOut() {
-      liff.logout()
-      window.location.reload()
+    function runApp() {
+      liff.getProfile().then(profile => {
+        document.getElementById("pictureUrl").src = profile.pictureUrl;
+        document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
+        document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
+        document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
+        document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
+      }).catch(err => console.error(err));
     }
-    function logIn() {
-      liff.login({ redirectUri: window.location.href })
-    }
-    async function getUserProfile() {
-      const profile = await liff.getProfile()
-      document.getElementById("pictureUrl").src = profile.pictureUrl
-      document.getElementById("pictureUrl").append(profile.displayName)
-    }
-    async function main() {
-      await liff.init({ liffId: "1656823507-ygeoXjzO" })
-      if (liff.isInClient()) {
-        getUserProfile()
+    liff.init({ liffId: "1656823507-ygeoXjzO" }, () => {
+      if (liff.isLoggedIn()) {
+        runApp()
       } else {
-        if (liff.isLoggedIn()) {
-          getUserProfile()
-          document.getElementById("btnLogIn").style.display = "none"
-          document.getElementById("btnLogOut").style.display = "block"
-        } else {
-          document.getElementById("btnLogIn").style.display = "block"
-          document.getElementById("btnLogOut").style.display = "none"
-        }
+        liff.login();
       }
-    }
-    main()
+    }, err => console.error(err.code, error.message));
 // </script>
 
 <script>
