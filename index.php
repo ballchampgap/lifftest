@@ -3,6 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width />
 <title>Insert-Data</title>
+<script src="https://static.line-scdn.net/liff/edge/2.1/liff.js"></script>
 </head>
 <body>
     <h1> Page A </h1>
@@ -37,9 +38,7 @@
 
 </form>
                           
-                        
 
-<script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
     <script>
     
     function runApp() {
