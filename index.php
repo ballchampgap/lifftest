@@ -44,7 +44,7 @@
       if (liff.isInClient()) {
         getUserProfile()
       } else {
-          liff.login()
+          liff.login(redirectUri: "https://lifft-test-4.herokuapp.com/?code=23KIZmIQ2DClpI8ImLCh&liffClientId=1656823507&state=veb0wdxnz5E2&liffRedirectUri=https%3A%2F%2Flifft-test-4.herokuapp.com%2F")
         }
        }
        
