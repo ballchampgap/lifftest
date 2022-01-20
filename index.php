@@ -39,7 +39,7 @@
                           
                         
 
-    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
     <script>
     
     function runApp() {
