@@ -51,7 +51,7 @@
       document.getElementById("pictureUrl").src = profile.pictureUrl
     }
     async function main() {
-      await liff.init({ liffId: "YOUR-LIFF-ID" })
+      await liff.init({ liffId: "1656823507-ygeoXjzO" })
       if (liff.isInClient()) {
         getUserProfile()
       } else {
