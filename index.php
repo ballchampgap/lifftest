@@ -39,6 +39,15 @@
 
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script>
+       async function main() {
+      await liff.init({ liffId: "1656823507-ygeoXjzO" })
+      if (liff.isInClient()) {
+        getUserProfile()
+      } else {
+          liff.login()
+        }
+       }
+       
     function logOut() {
       liff.logout()
       window.location.reload()
@@ -48,26 +57,27 @@
     }
     async function getUserProfile() {
       const profile = await liff.getProfile()
-      document.getElementById("pictureUrl").style.display = "block"
       document.getElementById("pictureUrl").src = profile.pictureUrl
+      document.getElementById("pictureUrl").append(profile.displayName)
     }
-    async function main() {
-      await liff.init({ liffId: "1656823507-ygeoXjzO" })
-      if (liff.isInClient()) {
-        getUserProfile()
-      } else {
-        if (liff.isLoggedIn()) {
-          getUserProfile()
-          document.getElementById("btnLogIn").style.display = "none"
-          document.getElementById("btnLogOut").style.display = "block"
-        } else {
-          document.getElementById("btnLogIn").style.display = "block"
-          document.getElementById("btnLogOut").style.display = "none"
-        }
-      }
-    }
-    main()
-</script>
+//     async function main() {
+//       await liff.init({ liffId: "1656823507-ygeoXjzO" })
+//       if (liff.isInClient()) {
+//         getUserProfile()
+//       } else {
+//         if (liff.isLoggedIn()) {
+//           getUserProfile()
+//           document.getElementById("btnLogIn").style.display = "none"
+//           document.getElementById("btnLogOut").style.display = "block"
+//         } else {
+//           document.getElementById("btnLogIn").style.display = "block"
+//           document.getElementById("btnLogOut").style.display = "none"
+//         }
+//       }
+//     }
+//     main()
+main()
+// </script>
 
 <script>
     import axios from "axios";
