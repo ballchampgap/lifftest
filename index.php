@@ -39,15 +39,7 @@
 
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script>
-       async function main() {
-      await liff.init({ liffId: "1656823507-ygeoXjzO" })
-      if (liff.isInClient()) {
-        getUserProfile()
-      } else {
-          liff.login(redirectUri: "https://lifft-test-4.herokuapp.com/?code=23KIZmIQ2DClpI8ImLCh&liffClientId=1656823507&state=veb0wdxnz5E2&liffRedirectUri=https%3A%2F%2Flifft-test-4.herokuapp.com%2F")
-        }
-       }
-       
+    
     function logOut() {
       liff.logout()
       window.location.reload()
@@ -60,23 +52,22 @@
       document.getElementById("pictureUrl").src = profile.pictureUrl
       document.getElementById("pictureUrl").append(profile.displayName)
     }
-//     async function main() {
-//       await liff.init({ liffId: "1656823507-ygeoXjzO" })
-//       if (liff.isInClient()) {
-//         getUserProfile()
-//       } else {
-//         if (liff.isLoggedIn()) {
-//           getUserProfile()
-//           document.getElementById("btnLogIn").style.display = "none"
-//           document.getElementById("btnLogOut").style.display = "block"
-//         } else {
-//           document.getElementById("btnLogIn").style.display = "block"
-//           document.getElementById("btnLogOut").style.display = "none"
-//         }
-//       }
-//     }
-//     main()
-main()
+    async function main() {
+      await liff.init({ liffId: "1656823507-ygeoXjzO" })
+      if (liff.isInClient()) {
+        getUserProfile()
+      } else {
+        if (liff.isLoggedIn()) {
+          getUserProfile()
+          document.getElementById("btnLogIn").style.display = "none"
+          document.getElementById("btnLogOut").style.display = "block"
+        } else {
+          document.getElementById("btnLogIn").style.display = "block"
+          document.getElementById("btnLogOut").style.display = "none"
+        }
+      }
+    }
+    main()
 // </script>
 
 <script>
