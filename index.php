@@ -7,6 +7,9 @@
     <h1> Page A</h1>
     <img id="pictureUrl">
     <p id="displayName"><b>Name: </b></p>
+  <button id="btnLogIn" onclick="logIn()">Log In</button>
+  <button id="btnLogOut" onclick="logOut()">Log Out</button>
+
 <h2> พืชเศรษฐกิจ </h2>
 <form  action = "frminsert.php" method="POST">
     <select name="planteco" type="text" id="planteco"  required >
