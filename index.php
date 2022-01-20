@@ -7,10 +7,6 @@
     <h1> Page A</h1>
     <img id="pictureUrl">
     <p id="displayName"><b>displayName:</b></p>
-    <p id="statusMessage"><b>statusMessage:</b></p>
-    <button id="btnLogOut" onclick="logOut()">Log Out</button>
-
-
 
 <h2> พืชเศรษฐกิจ </h2>
 <form  action = "frminsert.php" method="POST">
@@ -61,19 +57,10 @@
     }
     async function main() {
       await liff.init({ liffId: "1656823507-ygeoXjzO" })
-      if (liff.isInClient()) {
         getUserProfile()
-      } else {
-        if (liff.isLoggedIn()) {
           getUserProfile()
           document.getElementById("btnLogIn").style.display = "none"
-          document.getElementById("btnLogOut").style.display = "block"
-        } else {
-          document.getElementById("btnLogIn").style.display = "block"
-          document.getElementById("btnLogOut").style.display = "none"
         }
-      }
-    }
     main()
   </script>
 </body>
