@@ -6,8 +6,8 @@
 <body>
     <h1> Page A</h1>
     <img id="pictureUrl">
-    <p id="displayName"><b>displayName:</b></p>
-
+  <button id="btnLogIn" onclick="logIn()">Log In</button>
+  <button id="btnLogOut" onclick="logOut()">Log Out</button>
 
 <h2> พืชเศรษฐกิจ </h2>
 <form  action = "frminsert.php" method="POST">
@@ -37,7 +37,7 @@
                         
 
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-  <script>
+    <script>
     function logOut() {
       liff.logout()
       window.location.reload()
@@ -51,7 +51,7 @@
       document.getElementById("pictureUrl").src = profile.pictureUrl
     }
     async function main() {
-      await liff.init({ liffId: "1656823507-ygeoXjzO" })
+      await liff.init({ liffId: "YOUR-LIFF-ID" })
       if (liff.isInClient()) {
         getUserProfile()
       } else {
