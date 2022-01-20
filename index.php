@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width />
 <title>Insert-Data</title>
 <script src="https://static.line-scdn.net/liff/edge/2.1/liff.js"></script>
 </head>
