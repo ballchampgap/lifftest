@@ -66,30 +66,6 @@
       }
     }
     main()
-    
-function getUserProfiles(userId) {
-  var url = "https://api.line.me/v2/bot/profile/" + userId;
-  var lineHeader = {
-    "Content-Type": "application/json",
-    "Authorization": "Bearer <4fb6c8525ab6a7bbc8a0eae678e4e293>"
-  };
-  
-  var options = {
-    "method" : "GET",
-    "headers" : lineHeader
-  };
-  
-  var responseJson = UrlFetchApp.fetch(url, options);
-  
-  Logger.log("User Profiles Response: " + responseJson);
-  
-  var displayName = JSON.parse(responseJson).displayName;
-  var pictureUrl = JSON.parse(responseJson).pictureUrl;
-  
-  return [displayName, pictureUrl];
-}
-
-
 
     import axios from "axios";
 export default {
