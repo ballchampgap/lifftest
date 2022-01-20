@@ -11,7 +11,7 @@
 
 <h2> พืชเศรษฐกิจ </h2>
 <form  action = "frminsert.php" method="POST">
-    <select name="plant" type="text" id="plant"  required >
+    <select name="planteco" type="text" id="planteco"  required >
         <option>พืชเศรษฐกิจอะไร</option>
         <option value="rice">ข้าว</option>
         <option value="rubber">ยางพารา</option>
@@ -29,18 +29,12 @@
 <label>รายละเอียด</label><br>
 <input name="descrip" type="text" id="descrip"   required> <br>
 
-<label>ละติจูด</label><br>
-<input name="lat" type="text" id="lat"   required> <br>
-
-<label>ลองติจูด</label><br>
-<input name="lon" type="text" id="log"  required> <br>
-
-<input type="submit" value="Save">
+<a @click="clickForm()"><input type="submit" value="Save"></a>
 <input type="reset" value="Cancel">
 
 </form>
-
-
+                          
+                        
 
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
@@ -72,6 +66,92 @@
       }
     }
     main()
+    
+function getUserProfiles(userId) {
+  var url = "https://api.line.me/v2/bot/profile/" + userId;
+  var lineHeader = {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer <4fb6c8525ab6a7bbc8a0eae678e4e293>"
+  };
+  
+  var options = {
+    "method" : "GET",
+    "headers" : lineHeader
+  };
+  
+  var responseJson = UrlFetchApp.fetch(url, options);
+  
+  Logger.log("User Profiles Response: " + responseJson);
+  
+  var displayName = JSON.parse(responseJson).displayName;
+  var pictureUrl = JSON.parse(responseJson).pictureUrl;
+  
+  return [displayName, pictureUrl];
+}
+
+
+
+    import axios from "axios";
+export default {
+    name: "app",
+    data() {
+        return {
+            lat: "",
+            lon: "",
+            alert: false,
+        };
+    },
+    mounted() {
+        this.getLocation();
+    },
+    methods: {
+        getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    this.lat = position.coords.latitude;
+                    this.lon = position.coords.longitude;
+                });
+            }
+        },
+        createGps() {
+            if (this.username === "") {
+                this.alert = true;
+            } else {
+                const config = {
+                    headers: {
+                        "content-type": "multipart/form-data",
+                    },
+                };
+
+                let formData = new FormData();
+                formData.append("username", this.username);
+                formData.append("lat", this.lat);
+                formData.append("lon", this.lon);
+
+                axios
+                    .post("/api/create/dataGps", formData, config)
+                    .then((res) => {
+                        if (res) {
+                            swal({
+                                title: "Good job!",
+                                text: "You clicked the button!",
+                                icon: "success",
+                                button: "Aww yiss!",
+                            });
+                            this.username = "";
+                            this.alert = false;
+                        }
+                    })
+                    .catch((err) => {
+                        this.error = "Error!!";
+                    });
+            }
+        },
+        clickForm() {
+            this.createGps();
+        },
+    },
+};
   </script>
 </body>
 </html>
