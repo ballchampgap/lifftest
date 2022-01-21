@@ -12,8 +12,8 @@ body {
     background-color: #EAEAEA;
   }
   #login .container #login-row #login-column #login-box #login-form {
-    padding: 3px;
+    padding: 0;
   }
   #login .container #login-row #login-column #login-box #login-form #register-link {
-    margin-top: 3px;
+    margin-top: 50%;
   }
