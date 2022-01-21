@@ -9,8 +9,6 @@
     <img id="pictureUrl" width="25%">
   <p id="userId"></p>
   <p id="displayName"></p>
-  <p id="statusMessage"></p>
-  <p id="getDecodedIDToken"></p>
 
 <h2> พืชเศรษฐกิจ </h2>
 <form  action = "frminsert.php" method="POST">
@@ -37,16 +35,13 @@
 
 </form>
                           
-
+<!-- ไลน์ liff -->
     <script>
-    
     function runApp() {
       liff.getProfile().then(profile => {
         document.getElementById("pictureUrl").src = profile.pictureUrl;
         document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
-        document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
-        document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
       }).catch(err => console.error(err));
     }
     liff.init({ liffId: "1656823507-ygeoXjzO" }, () => {
@@ -56,7 +51,10 @@
         liff.login();
       }
     }, err => console.error(err.code, error.message));
-// </script>
+ </script>
+<!-- ไลน์ liff -->
+
+
 
 <script>
     import axios from "axios";
