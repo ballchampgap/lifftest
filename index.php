@@ -3,6 +3,26 @@
 <head>
 <title>Insert-Data</title>
 <script src="https://static.line-scdn.net/liff/edge/2.1/liff.js"></script>
+
+<!-- ไลน์ liff -->
+<script>
+    function runApp() {
+      liff.getProfile().then(profile => {
+        document.getElementById("pictureUrl").src = profile.pictureUrl;
+        document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
+        document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
+      }).catch(err => console.error(err));
+    }
+    liff.init({ liffId: "1656823507-ygeoXjzO" }, () => {
+      if (liff.isLoggedIn()) {
+        runApp()
+      } else {
+        liff.login();
+      }
+    }, err => console.error(err.code, error.message));
+ </script>
+<!-- ไลน์ liff -->
+
 </head>
 <body>
     <h1> Page A </h1>
@@ -30,29 +50,12 @@
 <label>รายละเอียด</label><br>
 <input name="descrip" type="text" id="descrip"   required> <br>
 
-<a @click="clickForm()"><input type="submit" value="Save"></a>
+<input type="submit" value="Save">
 <input type="reset" value="Cancel">
 
 </form>
                           
-<!-- ไลน์ liff -->
-    <script>
-    function runApp() {
-      liff.getProfile().then(profile => {
-        document.getElementById("pictureUrl").src = profile.pictureUrl;
-        document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
-        document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
-      }).catch(err => console.error(err));
-    }
-    liff.init({ liffId: "1656823507-ygeoXjzO" }, () => {
-      if (liff.isLoggedIn()) {
-        runApp()
-      } else {
-        liff.login();
-      }
-    }, err => console.error(err.code, error.message));
- </script>
-<!-- ไลน์ liff -->
+
 
 
 
