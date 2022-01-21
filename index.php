@@ -39,8 +39,8 @@
     </select><br>
 </div>
     <div class="form-group">
-    <textarea  for="username" class="text-info" rows="3" >รายละเอียด</textarea><br>
-<input name="descrip" type="text" id="descrip" class="form-control"   required> <br>
+    <label  for="username" class="text-info" rows="3" >รายละเอียด</label><br>
+    <textarea name="descrip" type="text" id="descrip" class="form-control"   required> </textarea><br>
 </div>
 
 <div class="form-group">
