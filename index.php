@@ -35,6 +35,7 @@
         <option class="form-control" value="epidemic">โรคระบาด</option>
         <option class="form-control" value="pest">ศัตรูพืช</option>
     </select><br>
+</div>
     <div class="form-group">
 <label  for="username" class="text-info" >รายละเอียด</label><br>
 <input name="descrip" type="text" id="descrip" class="form-control"   required> <br>
