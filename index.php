@@ -17,13 +17,13 @@
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12"><br><br>
                     <div class="text-center">
-                    <img id="pictureUrl" width="30%" class="rounded">
+                    <img id="pictureUrl" width="50%" class="rounded">
                     </div><br><br>
                     <form  action = "frminsert.php" method="POST" class="form">
                     <h3 class="text-center text-info"><p id="displayName"></p></h3>
                 <div class="form-group">
                 <label for="username" class="text-info">โปรดเลือก</label><br>
-                <select name="planteco" type="text" id="planteco"  required >
+                <select class="form-select form-select-lg mb-3" name="planteco" type="text" id="planteco"  required >
         <option class="form-control" value="rice">ข้าว</option>
         <option class="form-control" value="rubber">ยางพารา</option>
         <option class="form-control" value="sugarcane">อ้อย</option>
@@ -33,13 +33,13 @@
     </div>
     <div class="form-group">
     <label for="password" class="text-info">โปรดเลือก</label><br>
-    <select name="epi" type="text" id="epi"  required >
+    <select class="form-select form-select-lg mb-3" name="epi" type="text" id="epi"  required >
         <option class="form-control" value="epidemic">โรคระบาด</option>
         <option class="form-control" value="pest">ศัตรูพืช</option>
     </select><br>
 </div>
     <div class="form-group">
-<label  for="username" class="text-info" >รายละเอียด</label><br>
+    <textarea  for="username" class="text-info" rows="3" >รายละเอียด</textarea><br>
 <input name="descrip" type="text" id="descrip" class="form-control"   required> <br>
 </div>
 
