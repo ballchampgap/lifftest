@@ -17,10 +17,3 @@ body {
   #login .container #login-row #login-column #login-box #login-form #register-link {
     margin-top: -85px;
   }
-  #img_container{
-    border: 1px solid grey;
-    height: 250px;
-  }
-  #img_container img{
-    height: 100px;
-  }

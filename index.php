@@ -11,7 +11,6 @@
 
 </head>
 <body>
-<img id="pictureUrl" width="10%">
 <div id="login">
 <div class="container">
 <div id="login-row" class="row justify-content-center align-items-center">
@@ -19,6 +18,7 @@
                     <div id="login-box" class="col-md-12">
                     <form  action = "frminsert.php" method="POST" class="form">
                     <h3 class="text-center text-info"><p id="displayName"></p></h3>
+                    <img id="pictureUrl" width="10%">
                 <div class="form-group">
                 <label for="username" class="text-info">โปรดเลือก</label><br>
                 <select name="planteco" type="text" id="planteco"  required >
