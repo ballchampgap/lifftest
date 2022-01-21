@@ -11,8 +11,8 @@
 
 </head>
 <body>
+<img id="pictureUrl" width="10%">
 <div id="login">
-<img id="pictureUrl" width="25%">
 <div class="container">
 <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
