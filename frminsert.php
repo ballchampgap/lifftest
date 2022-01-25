@@ -12,15 +12,13 @@ $descrip = $_POST['descrip'];
 
 if ($epi=='epidemic'){
 
-    $sql =  "INSERT INTO epis (lat,lon,plant,pest_epis,what,descrip,yourname)
-    VALUE ('$pname', '$lat', '$lon','$planteco', '$epi','$descrip','$pname')";
-    $resultInsert = pg_query($con, $sql);
+    $sql =  "INSERT INTO epis (lat,lon,plant,pest_epis,what,descrip,yourname)VALUES('$lat', '$lon','$planteco', '$epi','$descrip','$pname')";
+    $myPOD->query($sql);
 }
 else{
 
-    $sql =  "INSERT INTO datapest (lat,lon,plant,pest_epis,what,descrip,yourname)
-    VALUE ('$pname', '$lat', '$lon','$planteco', '$epi','$descrip','$pname')";
-    $resultInsert = pg_query($con, $sql);
+    $sql =  "INSERT INTO datapest (lat,lon,plant,pest_epis,what,descrip,yourname)VALUES('$lat', '$lon','$planteco', '$epi','$descrip','$pname')";
+    $myPOD->query($sql);
 }
 //บันทึกสำเร็จแจ้งเตือนและกระโดดกลับไปหน้าฟอร์ม   
 if ($resultInsert) 
