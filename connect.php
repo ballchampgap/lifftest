@@ -11,8 +11,8 @@ try{
     $dsn = "pgsql:host=" . $host . ";port=" . $port .";dbname=" . $dbname . ";user=" . $user . ";password=" . $password . ";";
 //create a pdo instance
    $myPOD = new PDO($dsn, $user, $password);
-
 }
+
 catch (PDOException $e) {
 echo 'Connection failed: ' . $e->getMessage();
 }

@@ -11,10 +11,8 @@ $pest = $_POST['pest'];
 $descrip = $_POST['descrip'];
 
 // if ($epi=='epidemic'){
-try{
     $sql ="INSERT INTO epis(lat,lon,plant,pest_epis,what,descrip,yourname)VALUES('$lat', '$lon','$planteco', '$epi','$descrip','$pname')";
-    $myPOD->query($sql);
-}
+    $result = $myPOD->query($sql);
 // }
 // else{
 
@@ -22,7 +20,7 @@ try{
 //     $myPOD->query($sql);
 // }
 //บันทึกสำเร็จแจ้งเตือนและกระโดดกลับไปหน้าฟอร์ม   
-if ($myPOD) 
+if ($result) 
 {
 
     header("Location:http://localhost/PHP-ADD/");
