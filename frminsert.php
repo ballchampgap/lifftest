@@ -11,9 +11,10 @@ $pest = $_POST['pest'];
 $descrip = $_POST['descrip'];
 
 // if ($epi=='epidemic'){
-
-    $sql =  "INSERT INTO epis (lat,lon,plant,pest_epis,what,descrip,yourname)VALUES('$lat', '$lon','$planteco', '$epi','$descrip','$pname')";
+try{
+    $sql ="INSERT INTO epis(lat,lon,plant,pest_epis,what,descrip,yourname)VALUES('$lat', '$lon','$planteco', '$epi','$descrip','$pname')";
     $myPOD->query($sql);
+}
 // }
 // else{
 
