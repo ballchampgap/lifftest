@@ -1,6 +1,7 @@
 <?php
-require 'connect.php';
-
+include_once 'connect.php';
+if(isset($_POST['save']))
+{
 
 $pname = $_POST['displayName'];
 $lat = $_POST['lat'];
@@ -11,9 +12,15 @@ $pest = $_POST['pest'];
 $descrip = $_POST['descrip'];
 
 // if ($epi=='epidemic'){
-    $sql ='INSERT INTO epis(lat,lon,plant,pest_epis,what,descrip,yourname)
-    VALUES('$lat', '$lon','$planteco', '$epi','$descrip','$pname')';
-    $result = $myPOD->query($sql);
+    $sql ="INSERT INTO epis(lat,lon,plant,pest_epis,what,descrip,yourname)
+    values('$lat', '$lon','$planteco', '$epi','$descrip','$pname')";
+     if($result = pg_query($sql)){
+		echo "Data Added Successfully.";
+	 }
+	 else{
+		echo "Error.";
+	 }
+}
 // }
 // else{
 
