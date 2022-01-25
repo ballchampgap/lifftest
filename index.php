@@ -56,7 +56,7 @@
 
 
     <!-- ไลน์ liff -->
-<script>
+<!-- <script>
     function runApp() {
       liff.getProfile().then(profile => {
         document.getElementById("pictureUrl").src = profile.pictureUrl;
@@ -70,7 +70,7 @@
         liff.login();
       }
     }, err => console.error(err.code, error.message));
- </script>
+ </script> -->
 <!-- ไลน์ liff -->
 
 
