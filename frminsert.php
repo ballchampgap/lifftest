@@ -17,11 +17,11 @@ if ($epi=='epidemic'){
 }
 else{
 
-    $sql =  "INSERT INTO datapest (lat,lon,plant,pest_epis,what,descrip,yourname)VALUES('$lat', '$lon','$planteco', '$epi','$descrip','$pname')";
+    $sql =  "INSERT INTO datapess (lat,lon,plant,pest_epis,what,descrip,yourname)VALUES('$lat', '$lon','$planteco', '$epi','$descrip','$pname')";
     $myPOD->query($sql);
 }
 //บันทึกสำเร็จแจ้งเตือนและกระโดดกลับไปหน้าฟอร์ม   
-if ($resultInsert) 
+if ($myPOD) 
 {
 
     header("Location:http://localhost/PHP-ADD/");
