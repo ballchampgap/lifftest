@@ -75,7 +75,7 @@
 
 
 
-<script>
+<!-- <script>
     import axios from "axios";
 export default {
     name: "app",
@@ -137,6 +137,6 @@ export default {
         },
     },
 };
-  </script>
+  </script> -->
 </body>
 </html>
