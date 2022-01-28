@@ -3,6 +3,7 @@
 session_start();
 require_once "connect.php";
 
+if(isset($_POST['submit'])){
 $pname = $_POST['displayName'];
 $lat = $_POST['lat'];
 $lon = $_POST['lon'];
@@ -29,17 +30,11 @@ $descrip = $_POST['descrip'];
 		$_SESSION['error'] = "Data has been inserted succesfully";
 		header("location: index.php");
 	}
-// }
+}
 // else{
 
 //     $sql =  "INSERT INTO datapess (lat,lon,plant,pest_epis,what,descrip,yourname)VALUES('$lat', '$lon','$planteco', '$epi','$descrip','$pname')";
 //     $myPOD->query($sql);
 // }
 //บันทึกสำเร็จแจ้งเตือนและกระโดดกลับไปหน้าฟอร์ม   
-if ($result) 
-{
-
-    header("Location:http://localhost/PHP-ADD/");
-}
-
 ?>
