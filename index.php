@@ -20,7 +20,7 @@
                     <img id="pictureUrl" width="50%" class="rounded">
                     </div><br><br>
                     <form  action = "frminsert.php" method="POST" class="form">
-                    <h3 class="text-center text-info"><p id="displayName"></p></h3>
+                    <!-- <h3 class="text-center text-info"><p id="displayName"></p></h3> -->
                 <div class="form-group">
                 <label for="username" class="text-info">โปรดเลือก</label><br>
                 <select class="form-select form-select-lg mb-3" name="planteco" type="text" id="planteco"  required >

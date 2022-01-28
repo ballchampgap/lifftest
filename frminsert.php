@@ -3,23 +3,23 @@
 require 'connect.php';
 
 if(isset($_POST['submit'])){
-$pname = $_POST['displayName'];
-$lat = $_POST['lat'];
-$lon = $_POST['lon'];
+// $pname = $_POST['displayName'];
+// $lat = $_POST['lat'];
+// $lon = $_POST['lon'];
 $planteco = $_POST['planteco'];
 $epi = $_POST['epi'];
-$pest = $_POST['pest'];
+// $pest = $_POST['pest'];
 $descrip = $_POST['descrip'];
 
 // if ($epi=='epidemic'){
-    $sql = $conn->prepare("INSERT INTO epis(lat,lon,plant,pest_epis,what,descrip,yourname)VALUES(:lat, :lon, :planteco, :epi, :pest, :descrip :pname)");
-    $sql->bindParam(":lat", $lat);
-	$sql->bindParam(":lon", $lon);
+    $sql = $conn->prepare("INSERT INTO epis(plant, pest_epis, descrip)VALUES(:planteco, :epi, :descrip)");
+    // $sql->bindParam(":lat", $lat);
+	// $sql->bindParam(":lon", $lon);
 	$sql->bindParam(":planteco", $planteco);
 	$sql->bindParam(":epi", $epi);
-	$sql->bindParam(":pest", $pest);
+	// $sql->bindParam(":pest", $pest);
 	$sql->bindParam(":descrip", $descrip);
-	$sql->bindParam(":pname", $pname);
+	// $sql->bindParam(":pname", $pname);
 	$sql->execute();
 
 	if ($sql){
